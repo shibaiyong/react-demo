@@ -1,0 +1,27 @@
+.header,.body,.footer{
+    box-sizing:border-box;
+}
+.header{
+    height: 45px;
+    line-height: 45px;
+    border:1px solid #edd0be;
+    color:#00a1e9;
+    font-size: 16px;
+    padding-left: 5px;
+}
+.body{
+    position: absolute;
+    top:45px;
+    bottom:150px;
+    border:1px solid #ff6e97;
+    width:100%;
+    color:#ff6e97;
+}
+.footer{
+    position: absolute;
+    width:100%;
+    height:150px;
+    bottom:0;
+    border:1px solid goldenrod;
+    color:goldenrod;
+}
