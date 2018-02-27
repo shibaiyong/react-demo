@@ -28,8 +28,4 @@ class IndexCom extends React.Component {
     }
 }
 
-<<<<<<< HEAD
 export default IndexCom
-=======
-export default Index
->>>>>>> 42ef54ca3d29952917e4f8e65f0a3bf69f01a6aa
