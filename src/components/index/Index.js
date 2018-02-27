@@ -4,7 +4,7 @@ import Header from '../common/Header.js'
 import Body from '../common/Body.js'
 import Footer from '../common/Footer.js'
 
-class Index extends React.Component {
+class IndexCom extends React.Component {
     constructor (props){
         super (props)
         this.state={
@@ -28,4 +28,4 @@ class Index extends React.Component {
     }
 }
 
-export default Index
+export default IndexCom

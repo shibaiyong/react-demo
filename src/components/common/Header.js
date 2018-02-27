@@ -20,11 +20,19 @@ class Header extends React.Component{
     }
     addDoThing(e){
         if(e.keyCode==13){
-            this.setState({
-                willDoTing:this.state.willDoThing.push(e.target.value)
-            })
-            this.props.outputData(this.state.willDoThing);
+          this.state.willDoThing.push(e.target.value)
+          //异步
+          this.setState({
+              willDoTing:this.state.willDoThing
+          })
+          //同步
+          // this.setState((prevState,prop)=>({
+          //   willDoTing:prevState
+          // }))
+          this.props.outputData(this.state.willDoThing);
+          e.target.value='';
         }
+        
     }
 
     componentDidMount(){

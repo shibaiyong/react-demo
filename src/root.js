@@ -18,7 +18,7 @@ class Root extends React.Component {
     return (
       <Router history={browserHistory}>
         <Route path="/" component={IndexCom}></Route>
-        <Route path='/detail/:id' component={Detail}></Route>
+        <Route path='/detail' component={Detail}></Route>
       </Router>
     )
   }
