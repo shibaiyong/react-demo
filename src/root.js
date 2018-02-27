@@ -18,7 +18,11 @@ class Root extends React.Component {
     return (
       <Router history={browserHistory}>
         <Route path="/" component={IndexCom}></Route>
+<<<<<<< HEAD
         <Route path='/detail' component={Detail}></Route>
+=======
+        <Route path='/detail/:id' component={Detail}></Route>
+>>>>>>> 42ef54ca3d29952917e4f8e65f0a3bf69f01a6aa
       </Router>
     )
   }

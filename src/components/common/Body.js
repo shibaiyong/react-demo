@@ -1,4 +1,8 @@
 import React from 'react'
+<<<<<<< HEAD
+=======
+
+>>>>>>> 42ef54ca3d29952917e4f8e65f0a3bf69f01a6aa
 import { browserHistory } from 'react-router'
 
 class Body extends React.Component {
@@ -6,8 +10,12 @@ class Body extends React.Component {
       super (props)
       this.state={
           bodyContent:'Hello Word!!!',
+<<<<<<< HEAD
           willToDoThings:[],
           completeThings:[]
+=======
+          willToDoThings:[]
+>>>>>>> 42ef54ca3d29952917e4f8e65f0a3bf69f01a6aa
       }
   }
 
@@ -18,6 +26,7 @@ class Body extends React.Component {
           willToDoThings:nextProps.Things
       })
   }
+<<<<<<< HEAD
   linkTo(id,name){
     browserHistory.push({pathname:'/detail',query:{id:id,name:name}})
   }
@@ -47,6 +56,12 @@ class Body extends React.Component {
       }
     }
   }
+=======
+  linkTo(id){
+    browserHistory.push('/detail/'+id)
+  }
+
+>>>>>>> 42ef54ca3d29952917e4f8e65f0a3bf69f01a6aa
   componentDidMount(){
       
   }
@@ -58,16 +73,21 @@ class Body extends React.Component {
           {
             this.state.willToDoThings.map((item,index)=>{
               return (
+<<<<<<< HEAD
                 <li key={index}>
                 <span>{index}、{item}</span>&nbsp;&nbsp;
                 <span onClick={this.completeThing.bind(this,index)}>complete</span>&nbsp;&nbsp;
                 <span onClick={this.deleteThing.bind(this,index)}>delete</span>&nbsp;&nbsp;
                 <span onClick={this.linkTo.bind(this,index,item)}>detail</span></li>
+=======
+                <li key={index} onClick={this.linkTo.bind(this,index)}>{index}、{item}</li>
+>>>>>>> 42ef54ca3d29952917e4f8e65f0a3bf69f01a6aa
               )
             })
           }
         </ul> 
         <h5>已完成</h5>
+<<<<<<< HEAD
         <ul>
           {
             this.state.completeThings.map( (item,index) => {
@@ -77,6 +97,8 @@ class Body extends React.Component {
             })
           }
         </ul>
+=======
+>>>>>>> 42ef54ca3d29952917e4f8e65f0a3bf69f01a6aa
       </div>
     )
   }

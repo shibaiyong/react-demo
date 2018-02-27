@@ -20,6 +20,7 @@ class Header extends React.Component{
     }
     addDoThing(e){
         if(e.keyCode==13){
+<<<<<<< HEAD
           this.state.willDoThing.push(e.target.value)
           //异步
           this.setState({
@@ -33,6 +34,13 @@ class Header extends React.Component{
           e.target.value='';
         }
         
+=======
+            this.setState({
+                willDoTing:this.state.willDoThing.push(e.target.value)
+            })
+            this.props.outputData(this.state.willDoThing);
+        }
+>>>>>>> 42ef54ca3d29952917e4f8e65f0a3bf69f01a6aa
     }
 
     componentDidMount(){
