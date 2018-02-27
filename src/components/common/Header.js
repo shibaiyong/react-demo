@@ -43,6 +43,10 @@ class Header extends React.Component{
             <div className='header'>
                 <header>{this.state.headerContent}
                         <input onKeyUp={this.addDoThing} style={this.headerstyle} type='text'/>
+                        <div class="login-info">
+                          <span>login</span>
+                          <span>register</span>
+                        </div>
                 </header>
             </div>
         )

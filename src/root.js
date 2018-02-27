@@ -7,6 +7,7 @@ import {Router, Route, browserHistory} from 'react-router'
 
 import IndexCom from './components/index/Index.js'
 import Detail from './components/details/Detail.js'
+import Mine from './components/mine/Mine.js'
 class Root extends React.Component {
   constructor(props){
     super(props)
@@ -19,6 +20,9 @@ class Root extends React.Component {
       <Router history={browserHistory}>
         <Route path="/" component={IndexCom}></Route>
         <Route path='/detail' component={Detail}></Route>
+        <Route path='/mine' component={Mine}>
+          
+        </Route>
       </Router>
     )
   }
