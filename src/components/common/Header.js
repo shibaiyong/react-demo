@@ -1,4 +1,5 @@
 import React from 'react';
+import { browserHistory } from 'react-router'
 
 class Header extends React.Component{
     constructor(props){
@@ -34,19 +35,20 @@ class Header extends React.Component{
         }
         
     }
-
+    linkTo(path){
+      browserHistory.push('/mine/'+path)
+    }
     componentDidMount(){
 
     }
     render(){
+    var loginInfo = this.props.isShowLogin ? (<div className="login-info"><span onClick={ this.linkTo.bind(this,'login')}>login</span>&nbsp;&nbsp;
+    <span onClick={ this.linkTo.bind(this,'register') }>register</span>&nbsp;&nbsp;</div>) : ''
         return (
             <div className='header'>
                 <header>{this.state.headerContent}
-                        <input onKeyUp={this.addDoThing} style={this.headerstyle} type='text'/>
-                        <div class="login-info">
-                          <span>login</span>
-                          <span>register</span>
-                        </div>
+                        <input onKeyUp={this.addDoThing} style={this.headerstyle} placeholder='To Do List' type='text'/>
+                        { loginInfo }
                 </header>
             </div>
         )

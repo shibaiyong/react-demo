@@ -8,3 +8,12 @@ body,html {
 * {
     margin: 0;padding:0;
 }
+ul{
+  list-style: none;
+}
+.shi-input{
+  width: 250px;height: 35px;
+  border-radius: 4px;
+  outline: none;
+  border: 1px solid #ddd;
+}

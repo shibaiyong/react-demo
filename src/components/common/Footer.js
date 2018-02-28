@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router';
 
 class Footer extends React.Component {
     constructor (props){
@@ -11,7 +12,7 @@ class Footer extends React.Component {
     render (){
         return (
             <div className='footer'>
-                { this.state.footerContent }
+              <Link to='/mine'>Mine</Link>
             </div>
         )
     }

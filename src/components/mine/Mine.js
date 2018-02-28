@@ -1,4 +1,5 @@
 import React from 'react';
+import Header from '../common/Header'
 
 class Mine extends React.Component{
   constructor(props){
@@ -6,23 +7,28 @@ class Mine extends React.Component{
     this.headerstyle = {
       
     }
+    this.isShowLogin = true
     this.state = {
 
     }
   }
   addDoThing(){
-      
+    
   }
 
   componentDidMount(){
 
   }
+
   render(){
+
     return (
       <div className='mine'>
-        <header>Mine</header>
+        <Header isShowLogin={ this.isShowLogin } />
+        { this.props.children }
       </div>
     )
+
   }
 }
 
