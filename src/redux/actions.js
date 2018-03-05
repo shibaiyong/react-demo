@@ -9,7 +9,6 @@ export default {
     store.dispatch(action)
   },
   changeText:function(text){
-    
     var action={
       type:'changetext',
       text:text

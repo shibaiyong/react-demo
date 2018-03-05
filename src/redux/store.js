@@ -11,7 +11,7 @@ var store = createStore((state={
   
   switch(action.type) {
     case 'changenum':
-      copystate.num++;
+      copystate.num++;  //不建议直接修改state, 可以采用 ... 或者 Object.assign()
       return Object.assign({},state,{num:copystate.num})
       break;
     case 'changetext':
