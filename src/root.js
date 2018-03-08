@@ -18,6 +18,8 @@ class Root extends React.Component {
     }
   }
   render(){
+    console.log('sssss')
+    console.log(...{a:1,b:2})
     return (
       <Router history={browserHistory}>
         <Route path="/" component={IndexCom}></Route>

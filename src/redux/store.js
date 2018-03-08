@@ -5,10 +5,8 @@ var copystate={
   num:0,
   text:'hello word'
 }
-var store = createStore((state={
-  num:0,
-  text:'hello word'},action)=>{
-  
+var store = createStore((state={  //注意传参数的方式
+  num:0, text:'hello word'},action)=>{
   switch(action.type) {
     case 'changenum':
       copystate.num++;  //不建议直接修改state,     可以采用 ... 或者 Object.assign()
