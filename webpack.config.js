@@ -10,12 +10,12 @@ const PATH = {
 
 const commonConfig = {
 	entry: {
-		src: path.join(PATH.src, "root.js")
+		app: path.join(PATH.src, "root.js")
 	},
 	output:{
 		publicPath: '/', 
 		path: PATH.build,
-		filename: '[name].js'
+		filename: '[name][hash].js'
 	},
 	module: {
 		loaders:[
