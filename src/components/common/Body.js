@@ -42,7 +42,7 @@ class Body extends React.Component {
         this.setState({
           completeThing:this.state.completeThing
         })
-
+        
         this.deleteThing(index);
       }
     }
