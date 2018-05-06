@@ -1,0 +1,34 @@
+import React from 'react'
+import Tab from './Tab'
+import TabPane from './TabPane'
+class Tabs extends React.Component{
+  constructor(props){
+    super(props)
+    
+  }
+
+  componentWillReceiveProps(nextProps){
+
+  }
+
+  componentWillMount(){
+
+  }
+
+  componentDidMount(){
+
+  }
+
+  render(){
+    return (
+      <Tab>
+        <TabPane key={0} tabcontent={'tabpane1'}>tabpane111111111111</TabPane>
+        <TabPane key={1} tabcontent={'tabpane2'}>tabpane222222222222</TabPane>
+        <TabPane key={2} tabcontent={'tabpane3'}>tabpane333333333333</TabPane>
+      </Tab>
+    )
+  }
+}
+
+
+export default Tabs

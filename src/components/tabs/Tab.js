@@ -1,7 +1,7 @@
 import React from 'react'
+import TabNav from './TabNav'
 
-
-class Tabs extends React.Component{
+class Tab extends React.Component{
   constructor(props){
     super(props)
 
@@ -15,24 +15,30 @@ class Tabs extends React.Component{
 
   }
 
-  componentDidMount(){
-
+  renderTabNav(){
+    const {children}=this.props
+    return <TabNav panels={children}></TabNav>
   }
 
-  getTabNav(){
-
-  }
-
-  getTabContent(){
+  renderTabContent(){
 
   }
 
   render(){
     return (
       <div>
-        {this.getTabNav()}
-        {this.getTabContent()}
+        {this.renderTabNav()}
       </div>
     )
   }
+
+  componentDidMount(){
+    console.log(this.props);
+    React.Children.map(this.props.children,function(child){
+      console.log(child)
+    })
+
+  }
 }
+
+export default Tab

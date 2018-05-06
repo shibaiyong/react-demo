@@ -1,5 +1,5 @@
 import React from 'react';
-import { browserHistory } from 'react-router'
+import { browserHistory,Link } from 'react-router'
 
 class Header extends React.Component{
     constructor(props){
@@ -49,6 +49,7 @@ class Header extends React.Component{
                 <header>{this.state.headerContent}
                         <input onKeyUp={this.addDoThing} style={this.headerstyle} placeholder='To Do List' type='text'/>
                         { loginInfo }
+                        <Link to='tabs'>tabs</Link>
                 </header>
             </div>
         )
