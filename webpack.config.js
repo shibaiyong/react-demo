@@ -57,7 +57,7 @@ const commonConfig = {
 	},
 	plugins:[new HtmlWebpackPlugin({
 		title: "react study",
-		template: path.join(__dirname, "index.mustache")
+		template: path.join(__dirname, "index.html")
 	})]
 }
 

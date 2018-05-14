@@ -4,7 +4,16 @@ import TabContent from './TabContent'
 class Tab extends React.Component{
   constructor(props){
     super(props)
+    this.state={
+      activeIndex:'1'
+    }
+    this.handelTabClick=this.handelTabClick.bind(this);
+  }
 
+  handelTabClick(activeIndex){
+    this.setState({
+      activeIndex:activeIndex
+    })
   }
 
   componentWillReceiveProps(nextProps){
@@ -17,29 +26,24 @@ class Tab extends React.Component{
 
   renderTabNav(){
     const {children}=this.props
-    return <TabNav panels={children}></TabNav>
+    return <TabNav panels={children} tabClick={this.handelTabClick}></TabNav>
   }
 
   renderTabContent(){
     const {children}=this.props
-    return <TabPane panels={children}></TabPane>
+    return <TabContent panels={children} activeIndex={this.state.activeIndex}></TabContent>
   }
 
   render(){
     return (
       <div>
         {this.renderTabNav()}
-        {this.redderTabContent()}
+        {this.renderTabContent()}
       </div>
     )
   }
 
-  componentDidMount(){
-    React.Children.map(this.props.children,function(child){
-      console.log(child)
-    })
-
-  }
+  
 }
 
 export default Tab

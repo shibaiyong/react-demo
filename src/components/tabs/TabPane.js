@@ -14,19 +14,18 @@ class TabPane extends React.Component{
   }
 
   componentDidMount(){
-
   }
 
   getTabs(){
-    const {panels}=this.props
-    React.Children.map()
+    
 
   }
 
   render(){
+    
     return (
-      <div className='tabpane'>
-        
+      <div className={this.props.className}>
+        {this.props.children}
       </div>
     )
   }

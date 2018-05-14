@@ -23,10 +23,12 @@ class TabNav extends React.Component{
   }
 
   getTabs(){
-    const {panels} = this.props;
+    const {panels,tabClick} = this.props;
     return React.Children.map(panels,(child)=>{
+      
+      const { panelIndex } = child.props;
       return (
-        <li style={this.nav}>
+        <li style={this.nav} onClick={tabClick.bind(null,panelIndex)}>
           {child.props.tabcontent}
         </li>
       )
@@ -35,7 +37,7 @@ class TabNav extends React.Component{
 
   render(){
     return (
-      <ul className='tabpane'>
+      <ul className='tabpane' style={{overflow:'hidden'}}>
         {this.getTabs()}
       </ul>
     )

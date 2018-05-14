@@ -22,9 +22,9 @@ class Tabs extends React.Component{
   render(){
     return (
       <Tab>
-        <TabPane key={0} tabcontent={'tabpane1'}>tabpane111111111111</TabPane>
-        <TabPane key={1} tabcontent={'tabpane2'}>tabpane222222222222</TabPane>
-        <TabPane key={2} tabcontent={'tabpane3'}>tabpane333333333333</TabPane>
+        <TabPane key={0} tabcontent={'tabpane1'} panelIndex='1'>tabpane111111111111</TabPane>
+        <TabPane key={1} tabcontent={'tabpane2'} panelIndex='2'>tabpane222222222222</TabPane>
+        <TabPane key={2} tabcontent={'tabpane3'} panelIndex='3'>tabpane333333333333</TabPane>
       </Tab>
     )
   }

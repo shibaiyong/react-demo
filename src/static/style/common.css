@@ -17,3 +17,9 @@ ul{
   outline: none;
   border: 1px solid #ddd;
 }
+.noIndex{
+    display: none;
+}
+.activeIndex{
+    display: block;
+}
