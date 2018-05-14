@@ -1,6 +1,6 @@
 import React from 'react'
 import TabNav from './TabNav'
-
+import TabContent from './TabContent'
 class Tab extends React.Component{
   constructor(props){
     super(props)
@@ -21,19 +21,20 @@ class Tab extends React.Component{
   }
 
   renderTabContent(){
-
+    const {children}=this.props
+    return <TabPane panels={children}></TabPane>
   }
 
   render(){
     return (
       <div>
         {this.renderTabNav()}
+        {this.redderTabContent()}
       </div>
     )
   }
 
   componentDidMount(){
-    console.log(this.props);
     React.Children.map(this.props.children,function(child){
       console.log(child)
     })

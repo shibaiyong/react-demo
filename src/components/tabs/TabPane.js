@@ -17,18 +17,16 @@ class TabPane extends React.Component{
 
   }
 
-  getTabNav(){
-
-  }
-
-  getTabContent(){
+  getTabs(){
+    const {panels}=this.props
+    React.Children.map()
 
   }
 
   render(){
     return (
       <div className='tabpane'>
-        hahahhahhahhah
+        
       </div>
     )
   }
