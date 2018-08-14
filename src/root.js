@@ -8,6 +8,7 @@ import {Router, Route, browserHistory, IndexRoute} from 'react-router'
 import IndexCom from './components/index/Index.js'
 import Detail from './components/details/Detail.js'
 import Mine from './components/mine/Mine.js'
+import List from './components/pageList/List.js'
 import Login from './components/logins/Login'
 import Register from './components/logins/Register'
 import Tabs from './components/tabs/TabUI'
@@ -26,6 +27,7 @@ class Root extends React.Component {
         <Route path="/" component={IndexCom}></Route>
         <Route path='/detail' component={Detail}></Route>
         <Route path='/tabs' component={Tabs}></Route>
+        <Route path='/list' component={List}></Route>
         <Route path='/mine' component={Mine}>
           <IndexRoute component={Login}/> 
           <Route path='/mine/login' component={Login}></Route>

@@ -1,4 +1,5 @@
 import React from 'react'
+import { browserHistory } from 'react-router'
 
 import Header from '../common/Header.js'
 import Body from '../common/Body.js'
@@ -17,12 +18,25 @@ class IndexCom extends React.Component {
             middleData:data
         })
     }
+    linkTo(){
+        console.log('ahhahah')
+        browserHistory.push({pathname:'/list',query:{id:'',name:''}})
+      }
     render (){
+        
+        let backAndTextColor = {
+            backgroundColor:'red',
+            color:'white',
+            fontSize:40
+        };
         return (
             <div className='index'>
                 <Header outputData={this.transmitData}/>
                 <Body Things={this.state.middleData}/>
-                <Footer />
+                <Footer/>
+                <div className='btn1' onClick={this.linkTo.bind(this)} style={backAndTextColor}>
+                    前往列表页
+                </div>
             </div>
         )
     }
