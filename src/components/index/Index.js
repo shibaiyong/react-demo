@@ -19,9 +19,8 @@ class IndexCom extends React.Component {
         })
     }
     linkTo(){
-        console.log('ahhahah')
         browserHistory.push({pathname:'/list',query:{id:'',name:''}})
-      }
+    }
     render (){
         
         let backAndTextColor = {
