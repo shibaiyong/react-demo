@@ -39,6 +39,32 @@
 }
 
 .index .btn1{
-  margin:0 auto;
+  margin:20px auto;
   width:210px;
+}
+
+/* 轮播图的样式 */
+.broadcast{
+  display:inline-block;
+}
+
+.broadcast .smallimglist{
+  display:inline-block;
+}
+
+.broadcast .bigshowcontainer{
+  text-align: center;
+}
+
+.broadcast .smallimglist li{
+  float:left;
+}
+
+.broadcast .left,.broadcast .right,.broadcast .smallimglist ul{
+  float:left;
+}
+
+
+.broadcast .smallimglist li.border{
+  border:1px solid red;
 }

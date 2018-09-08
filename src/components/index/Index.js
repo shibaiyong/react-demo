@@ -4,12 +4,20 @@ import { browserHistory } from 'react-router'
 import Header from '../common/Header.js'
 import Body from '../common/Body.js'
 import Footer from '../common/Footer.js'
+import Broadcast from '../common/Broadcast'
 
 class IndexCom extends React.Component {
     constructor (props){
         super (props)
         this.state={
-            middleData:[]
+            middleData:[],
+            imgList:[
+                {id:1,url:'/src/static/img/1.png'},
+                {id:2,url:'/src/static/img/2.png'},
+                {id:3,url:'/src/static/img/3.png'},
+                {id:4,url:'/src/static/img/4.png'},
+                {id:5,url:'/src/static/img/5.png'}
+            ]
         },
         this.transmitData = this.transmitData.bind(this)
     }
@@ -18,8 +26,8 @@ class IndexCom extends React.Component {
             middleData:data
         })
     }
-    linkTo(){
-        browserHistory.push({pathname:'/list',query:{id:'',name:''}})
+    linkTo(route,data){
+        browserHistory.push({pathname:route,query:{id:'',name:''}})
     }
     render (){
         
@@ -33,9 +41,10 @@ class IndexCom extends React.Component {
                 <Header outputData={this.transmitData}/>
                 <Body Things={this.state.middleData}/>
                 <Footer/>
-                <div className='btn1' onClick={this.linkTo.bind(this)} style={backAndTextColor}>
+                <div className='btn1' onClick={this.linkTo.bind(this,'/list')} style={backAndTextColor}>
                     前往列表页
                 </div>
+                <Broadcast imgList={this.state.imgList}/>
             </div>
         )
     }

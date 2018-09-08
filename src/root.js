@@ -12,6 +12,7 @@ import List from './components/pageList/List.js'
 import Login from './components/logins/Login'
 import Register from './components/logins/Register'
 import Tabs from './components/tabs/TabUI'
+import Broadcast from './components/common/Broadcast'
 class Root extends React.Component {
   constructor(props){
     super(props)
@@ -20,14 +21,13 @@ class Root extends React.Component {
     }
   }
   render(){
-    console.log('sssss')
-    console.log(...{a:1,b:2})
     return (
       <Router history={browserHistory}>
         <Route path="/" component={IndexCom}></Route>
         <Route path='/detail' component={Detail}></Route>
         <Route path='/tabs' component={Tabs}></Route>
         <Route path='/list' component={List}></Route>
+        <Route path='/broadcast' component={Broadcast}></Route>
         <Route path='/mine' component={Mine}>
           <IndexRoute component={Login}/> 
           <Route path='/mine/login' component={Login}></Route>
