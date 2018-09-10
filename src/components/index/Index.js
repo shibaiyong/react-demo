@@ -16,7 +16,10 @@ class IndexCom extends React.Component {
                 {id:2,url:'/src/static/img/2.png'},
                 {id:3,url:'/src/static/img/3.png'},
                 {id:4,url:'/src/static/img/4.png'},
-                {id:5,url:'/src/static/img/5.png'}
+                {id:5,url:'/src/static/img/5.png'},
+                {id:6,url:'/src/static/img/2.png'},
+                {id:7,url:'/src/static/img/3.png'},
+                {id:8,url:'/src/static/img/4.png'}
             ]
         },
         this.transmitData = this.transmitData.bind(this)
