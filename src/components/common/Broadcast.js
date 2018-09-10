@@ -21,19 +21,18 @@ class Broadcast extends React.Component {
         if(type == 'nextPage'){
 
             index = this.state.displayImgIndex + 1 > 4 ? 0 : this.state.displayImgIndex + 1;//判断最后一页，调到第一页
-            
-            this.setState({displayImgIndex:index},(prevState,prop)=>{
-                this.showBigImg(this.state.displayImgIndex)
-            })
-            
+        
         }else{
 
             index = this.state.displayImgIndex - 1 < 0 ? 4 : this.state.displayImgIndex - 1;//判断第一页调到最后一页
-            
-            this.setState({displayImgIndex:index},(prevState,prop)=>{
-                this.showBigImg(this.state.displayImgIndex)
-            })
+        
         }
+        
+        this.setState({displayImgIndex:index},(prevState,prop)=>{
+
+            this.showBigImg(this.state.displayImgIndex)
+
+        })
     }
     
     showBigImg(index){
