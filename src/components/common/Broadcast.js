@@ -37,14 +37,14 @@ class Broadcast extends React.Component {
         }
         if( index == len - 1 && type == 'prevPage' ){
             this.setState({
-                showImgList:this.state.smallImgList.slice(index - 3 + 1)
+                showImgList:this.state.smallImgList.slice(index - this.showImgLength + 1)
             })
         }
-        else if( index % 5 == 0 && type == 'nextPage'){
+        else if( index % this.showImgLength == 0 && type == 'nextPage'){
             this.setState({
                 showImgList:this.state.smallImgList.slice(index,index + this.state.showImgLength)
             })
-        }else if( index % 5 == 4 && type == 'prevPage'){
+        }else if( index % this.showImgLength == 4 && type == 'prevPage'){
             this.setState({
                 showImgList:this.state.smallImgList.slice(index + 1 - this.state.showImgLength, index + 1)
             })
