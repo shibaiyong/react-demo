@@ -35,16 +35,18 @@ class Broadcast extends React.Component {
             index = this.state.displayImgIndex - 1 < 0 ? len - 1 : this.state.displayImgIndex - 1;//判断第一页调到最后一页
         
         }
+        
         if( index == len - 1 && type == 'prevPage' ){
+            let leftImg = index % this.state.showImgLength + 1; 
             this.setState({
-                showImgList:this.state.smallImgList.slice(index - this.showImgLength + 1)
+                showImgList:this.state.smallImgList.slice(-leftImg)
             })
         }
-        else if( index % this.showImgLength == 0 && type == 'nextPage'){
+        else if( index % this.state.showImgLength == 0 && type == 'nextPage'){
             this.setState({
                 showImgList:this.state.smallImgList.slice(index,index + this.state.showImgLength)
             })
-        }else if( index % this.showImgLength == 4 && type == 'prevPage'){
+        }else if( index % this.state.showImgLength == 4 && type == 'prevPage'){
             this.setState({
                 showImgList:this.state.smallImgList.slice(index + 1 - this.state.showImgLength, index + 1)
             })
@@ -66,6 +68,7 @@ class Broadcast extends React.Component {
     }
 
     render (){
+        console.log(this.state.showImgList);
         var bigId = this.state.bigId;
         return (
             <div className='broadcast'>
