@@ -1,5 +1,5 @@
 import React from 'react'
-import { list } from '_postcss@6.0.22@postcss';
+// import { list } from '_postcss@6.0.22@postcss';
 
 class TabNav extends React.Component{
   constructor(props){
