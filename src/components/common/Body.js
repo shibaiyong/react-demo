@@ -59,10 +59,12 @@ class Body extends React.Component {
             this.state.willToDoThings.map((item,index)=>{
               return (
                 <li key={index}>
-                <span>{index}--{item}</span>&nbsp;&nbsp;
-                <span onClick={this.completeThing.bind(this,index)}>complete</span>&nbsp;&nbsp;
-                <span onClick={this.deleteThing.bind(this,index)}>delete</span>&nbsp;&nbsp;
-                <span onClick={this.linkTo.bind(this,index,item)}>detail</span></li>
+                <input type="checkbox"/>
+                  <p>{item}</p>
+                  <a onClick={this.linkTo.bind(this,index,item)}>删</a>
+                  <a onClick={this.deleteThing.bind(this,index)}>详</a>
+                  
+                </li>
               )
             })
           }
