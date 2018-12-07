@@ -1,6 +1,7 @@
 import React from 'react'
 import { browserHistory } from 'react-router'
 
+
 class Body extends React.Component {
   constructor (props){
       super (props)
@@ -9,6 +10,7 @@ class Body extends React.Component {
           willToDoThings:[],
           completeThings:[]
       }
+      
   }
 
   componentWillReceiveProps(nextProps,nextContent){
@@ -54,7 +56,7 @@ class Body extends React.Component {
     return (
       <div className='body'>
         <h5>正在进行</h5>
-        <ul>
+        <ul className="listitem">
           {
             this.state.willToDoThings.map((item,index)=>{
               return (
@@ -79,6 +81,7 @@ class Body extends React.Component {
             })
           }
         </ul>
+        
       </div>
     )
   }

@@ -1,28 +1,26 @@
 import React from 'react'
 import { browserHistory } from 'react-router'
 
+
+import Menu from 'antd/lib/menu'
+import Icon from 'antd/lib/icon'
+const SubMenu = Menu.SubMenu
+const MenuItemGroup = Menu.ItemGroup
+
 import Header from '../common/Header.js'
 import Body from '../common/Body.js'
-import Footer from '../common/Footer.js'
-import Broadcast from '../common/Broadcast'
+
+
 
 class IndexCom extends React.Component {
     constructor (props){
         super (props)
         this.state={
             middleData:[],
-            imgList:[
-                {id:1,url:'/src/static/img/1.png'},
-                {id:2,url:'/src/static/img/2.png'},
-                {id:3,url:'/src/static/img/3.png'},
-                {id:4,url:'/src/static/img/4.png'},
-                {id:5,url:'/src/static/img/5.png'},
-                {id:6,url:'/src/static/img/6.jpg'},
-                {id:7,url:'/src/static/img/7.jpg'},
-                {id:8,url:'/src/static/img/8.jpg'}
-            ]
+            
         },
         this.transmitData = this.transmitData.bind(this)
+        this.handleClick = this.handleClick.bind(this)
     }
     transmitData (data){
         this.setState({
@@ -32,6 +30,9 @@ class IndexCom extends React.Component {
     linkTo(route,data){
         browserHistory.push({pathname:route,query:{id:'',name:''}})
     }
+    handleClick(e){
+        this.linkTo(e.key);
+      }
     render (){
         
         let backAndTextColor = {
@@ -43,11 +44,39 @@ class IndexCom extends React.Component {
             <div className='index'>
                 <Header outputData={this.transmitData}/>
                 <Body Things={this.state.middleData}/>
-                <Footer/>
-                <div className='btn1' onClick={this.linkTo.bind(this,'/list')} style={backAndTextColor}>
-                    前往列表页
+                <div style={{float:'left',position:'absolute',top:'80px',left:'40px'}}>
+                    <Menu
+                        onClick={this.handleClick}
+                        style={{ width: 240 }}
+                        defaultSelectedKeys={['1']}
+                        defaultOpenKeys={['sub1']}
+                        mode="inline">
+                        <SubMenu key="sub1" title={<span><Icon type="mail" /><span>导航一</span></span>}>
+                            <MenuItemGroup key="g1" title="第一组">
+                                <Menu.Item key="/tabs">Tab切换</Menu.Item>
+                                <Menu.Item key="/list">列表页</Menu.Item>
+                            </MenuItemGroup>
+                            <MenuItemGroup key="g2" title="第二组">
+                                <Menu.Item key="/broadcast">轮播图</Menu.Item>
+                                <Menu.Item key="4">Option 4</Menu.Item>
+                            </MenuItemGroup>
+                        </SubMenu>
+                        <SubMenu key="sub2" title={<span><Icon type="appstore" /><span>Navigation Two</span></span>}>
+                            <Menu.Item key="5">Option 5</Menu.Item>
+                            <Menu.Item key="6">Option 6</Menu.Item>
+                            <SubMenu key="sub3" title="Submenu">
+                                <Menu.Item key="7">Option 7</Menu.Item>
+                                <Menu.Item key="8">Option 8</Menu.Item>
+                            </SubMenu>
+                        </SubMenu>
+                        <SubMenu key="sub4" title={<span><Icon type="setting" /><span>Navigation Three</span></span>}>
+                            <Menu.Item key="9">Option 9</Menu.Item>
+                            <Menu.Item key="10">Option 10</Menu.Item>
+                            <Menu.Item key="11">Option 11</Menu.Item>
+                            <Menu.Item key="12">Option 12</Menu.Item>
+                        </SubMenu>
+                    </Menu>
                 </div>
-                <Broadcast imgList={this.state.imgList}/>
             </div>
         )
     }

@@ -1,12 +1,23 @@
 import React from 'react'
 import { browserHistory } from 'react-router'
 
+import Header from '../common/Header.js'
+
 class Broadcast extends React.Component {
     constructor (props){
         super (props)
         this.state={
-            smallImgList:this.props.imgList,//要展示的下方的小图片列表
-            showImgList:[],
+            smallImgList:[
+                {id:1,url:'/src/static/img/1.png'},
+                {id:2,url:'/src/static/img/2.png'},
+                {id:3,url:'/src/static/img/3.png'},
+                {id:4,url:'/src/static/img/4.png'},
+                {id:5,url:'/src/static/img/5.png'},
+                {id:6,url:'/src/static/img/6.jpg'},
+                {id:7,url:'/src/static/img/7.jpg'},
+                {id:8,url:'/src/static/img/8.jpg'}
+            ],//数据源
+            showImgList:[],//要展示的下方的小图片列表
             bigId:'',     //展示的大图,值是图片的id
             bigImg:'',
             displayImgIndex:0,  //当前展示的图片在小图列表中的下标。
@@ -72,6 +83,7 @@ class Broadcast extends React.Component {
         var bigId = this.state.bigId;
         return (
             <div className='broadcast'>
+                <Header/>
                 <div className="bigshowcontainer">
                     <img src={this.state.bigImg}/>
                 </div>

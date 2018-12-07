@@ -1,6 +1,8 @@
 import React from 'react'
 import TabNav from './TabNav'
 import TabContent from './TabContent'
+import Header from '../common/Header.js'
+
 class Tab extends React.Component{
   constructor(props){
     super(props)
@@ -37,6 +39,7 @@ class Tab extends React.Component{
   render(){
     return (
       <div>
+        <Header/>
         {this.renderTabNav()}
         {this.renderTabContent()}
       </div>

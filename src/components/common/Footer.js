@@ -12,7 +12,7 @@ class Footer extends React.Component {
     render (){
         return (
             <div className='footer'>
-              <Link to='/mine'>Mine</Link>
+              {/* <Link to='/mine'>Mine</Link> */}
             </div>
         )
     }

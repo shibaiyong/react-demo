@@ -30,19 +30,20 @@ class Header extends React.Component{
         
     }
     linkTo(path){
-      browserHistory.push('/mine/'+path)
+      browserHistory.push(path)
     }
     componentDidMount(){
 
     }
     render(){
-    var loginInfo = this.props.isShowLogin ? (<div className="login-info"><span onClick={ this.linkTo.bind(this,'login')}>login</span>&nbsp;&nbsp;
-    <span onClick={ this.linkTo.bind(this,'register') }>register</span>&nbsp;&nbsp;</div>) : ''
+    let loginInfo = this.props.isShowLogin ? (<div className="login-info"><span onClick={ this.linkTo.bind(this,'/mine/login')}>Login</span>&nbsp;&nbsp;
+    <span onClick={ this.linkTo.bind(this,'/mine/register') }>Register</span>&nbsp;&nbsp;</div>) : '';
+    let goLogin = this.props.isShowLogin ? '' : <Link to='/mine'>去登录</Link>;
         return (
             <div className='header'>
+                { goLogin }
                 <header>
-                    <label>{this.state.headerContent}</label>
-                    <Link to='tabs'>tabs</Link>
+                    <label onClick={this.linkTo.bind(this,'/')}>{this.state.headerContent}</label>
                     <input onKeyUp={this.addDoThing} style={this.headerstyle} placeholder='To Do List' type='text'/>
                 </header>
                 { loginInfo }
