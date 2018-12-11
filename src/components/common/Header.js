@@ -1,6 +1,6 @@
 import React from 'react';
-import { browserHistory,Link } from 'react-router'
-
+import { browserHistory } from 'react-router'
+import { Link } from 'react-router-dom'
 class Header extends React.Component{
     constructor(props){
         super(props)
@@ -36,9 +36,13 @@ class Header extends React.Component{
 
     }
     render(){
-    let loginInfo = this.props.isShowLogin ? (<div className="login-info"><span onClick={ this.linkTo.bind(this,'/mine/login')}>Login</span>&nbsp;&nbsp;
-    <span onClick={ this.linkTo.bind(this,'/mine/register') }>Register</span>&nbsp;&nbsp;</div>) : '';
+    // let loginInfo = this.props.isShowLogin ? (<div className="login-info"><span onClick={ this.linkTo.bind(this,'/mine/login')}>Login</span>&nbsp;&nbsp;
+    // <span onClick={ this.linkTo.bind(this,'/mine/register') }>Register</span>&nbsp;&nbsp;</div>) : '';
+    // let goLogin = this.props.isShowLogin ? '' : <Link to='/mine'>去登录</Link>;
+    let loginInfo = this.props.isShowLogin ? (<div className="login-info"><Link to="/mine/login"><span onClick={ this.linkTo.bind(this,'/mine/login')}>Login</span></Link>&nbsp;&nbsp;
+    <Link to="/mine/login"><span onClick={ this.linkTo.bind(this,'/mine/register') }>Register</span></Link>&nbsp;&nbsp;</div>) : '';
     let goLogin = this.props.isShowLogin ? '' : <Link to='/mine'>去登录</Link>;
+    
         return (
             <div className='header'>
                 { goLogin }

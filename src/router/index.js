@@ -1,5 +1,5 @@
   import React from 'react'
-  import {Router, Route, IndexRoute,BrowserRouter} from 'react-router-dom'
+  import {Router, Route, Redirect,BrowserRouter,Switch,withRouter} from 'react-router-dom'
   import IndexCom from '../components/index/Index.js'
   import Detail from '../components/details/Detail.js'
   import Mine from '../components/mine/Mine.js'
@@ -25,13 +25,19 @@
   // )
   const Root = () => (
     <BrowserRouter>
-      
-      <Route path="/" component={IndexCom}></Route>
-      <Route path='/detail' component={Detail}></Route>
-      <Route path='/tabs' component={Tabs}></Route>
-      <Route path='/list' component={List}></Route>
-      <Route path='/broadcast' component={Broadcast}></Route>
-      
+      <div>
+      <Switch>
+        <Route path="/" component={IndexCom}></Route>
+        <Route path='/detail' component={Detail}></Route>
+        <Route path='/tabs' component={Tabs}></Route>
+        <Route path='/list' component={List}></Route>
+        <Route path='/broadcast' component={Broadcast}></Route>
+        <Route path='/mine' component={Mine}>
+          <Route path='/mine/login' component={Login}></Route>
+          <Route path='/mine/register' component={Register}></Route>
+        </Route>
+      </Switch>
+      </div>
     </BrowserRouter>
   )
 

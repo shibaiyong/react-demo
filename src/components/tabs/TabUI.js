@@ -1,6 +1,7 @@
 import React from 'react'
 import Tab from './Tab'
 import TabPane from './TabPane'
+import { withRouter } from 'react-router-dom'
 class Tabs extends React.Component{
   constructor(props){
     super(props)
@@ -31,4 +32,4 @@ class Tabs extends React.Component{
 }
 
 
-export default Tabs
+export default withRouter(Tabs)

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { browserHistory } from 'react-router'
+import { withRouter } from 'react-router-dom'
 
 import Header from '../common/Header.js'
 import Footer from '../common/Footer.js'
@@ -56,4 +56,4 @@ class List extends React.Component{
 }
 
 
-export default List
+export default withRouter(List)

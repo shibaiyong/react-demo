@@ -1,12 +1,10 @@
 import React from 'react'
-import { browserHistory } from 'react-router'
-
 
 import Menu from 'antd/lib/menu'
 import Icon from 'antd/lib/icon'
 const SubMenu = Menu.SubMenu
 const MenuItemGroup = Menu.ItemGroup
-
+import { withRouter } from 'react-router-dom'
 import Header from '../common/Header.js'
 import Body from '../common/Body.js'
 
@@ -28,7 +26,8 @@ class IndexCom extends React.Component {
         })
     }
     linkTo(route,data){
-        browserHistory.push({pathname:route,query:{id:'',name:''}})
+        
+        this.props.history.push(route)
     }
     handleClick(e){
         this.linkTo(e.key);
@@ -82,4 +81,4 @@ class IndexCom extends React.Component {
     }
 }
 
-export default IndexCom
+export default withRouter(IndexCom)
