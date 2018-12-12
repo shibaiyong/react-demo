@@ -1,3 +1,8 @@
+/* 最外层容器组件 */
+
+.rootContainer{
+  
+}
 .header,.body,.footer{
     box-sizing:border-box;
 }

@@ -56,4 +56,4 @@ class List extends React.Component{
 }
 
 
-export default withRouter(List)
+export default List

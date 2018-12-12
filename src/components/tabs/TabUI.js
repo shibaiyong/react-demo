@@ -17,7 +17,7 @@ class Tabs extends React.Component{
   }
 
   componentDidMount(){
-
+    console.log(this.props);
   }
 
   render(){
@@ -32,4 +32,4 @@ class Tabs extends React.Component{
 }
 
 
-export default withRouter(Tabs)
+export default Tabs
