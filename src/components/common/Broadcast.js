@@ -31,6 +31,8 @@ class Broadcast extends React.Component {
         this.setState({
             showImgList:this.state.smallImgList.slice(0,this.state.showImgLength)
         })
+
+        console.log('编程式导航 传过来的参数:' + this.props.location.state.data);
     }
 
     //翻页操作

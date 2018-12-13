@@ -39,7 +39,7 @@
       <Router component={App}>
         <Route exact path="/" component={IndexCom}></Route>
         <Route path='/detail' component={Detail}></Route>
-        <Route exact path='/tabs/:id' component={Tabs}></Route>
+        <Route exact path='/tabs' component={Tabs}></Route>
         <Route exact path='/list' component={List}></Route>
         <Route path='/broadcast' component={Broadcast}></Route>
         <Router component={Mine}>
@@ -50,7 +50,7 @@
     </BrowserRouter>
   )
 
-  // 相当于 下面这种写法
+  //相当于 下面这种写法
   //<App>
   //  <Route exact path="/" component={IndexCom}></Route>
   //  <Route path='/detail' component={Detail}></Route>

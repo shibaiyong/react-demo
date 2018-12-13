@@ -100,8 +100,11 @@
   position:absolute;
   right: 16px;
   top:0;
-  color:white;
   font-weight: bold;
+}
+.header .login-info a{
+  color:white;
+  text-decoration: none;
 }
 .login{
   text-align: center;
@@ -121,6 +124,13 @@
 }
 .index{
   position: relative;
+}
+
+/* 列表页样式 */
+
+.list .list-constainer{
+  width:600px;
+  margin:0 auto;
 }
 
 /* 轮播图的样式 */

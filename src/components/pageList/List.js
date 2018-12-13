@@ -28,27 +28,27 @@ class List extends React.Component{
   }
 
   componentDidMount(){
-
+    console.log('编程式导航 传过来的参数:' + this.props.location.state.data);
   }
   linkTo(id,name){
-    browserHistory.push({pathname:'/detail',query:{id:id,name:name}})
+    //参考列表页的编程式导航的传参方式
   }
   render(){
     return (
         <div className="list">
-        <Header/>
-        <ul>
-        {
-            this.listData.map((item,index)=>{
-                return (
-                    <li key={index} onClick={this.linkTo.bind(this,item.id,item.name)}>
-                        {item.id}-------------------------------------{item.name}
-                    </li>
-                )
-            })
-        }
-        </ul>
-        <Footer/>
+            <Header/>
+            <ul className="list-constainer">
+            {
+                this.listData.map((item,index)=>{
+                    return (
+                        <li key={index} onClick={this.linkTo.bind(this,item.id,item.name)}>
+                            {item.id}-------------------------------------{item.name}
+                        </li>
+                    )
+                })
+            }
+            </ul>
+            <Footer/>
         </div>
       
     )
