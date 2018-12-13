@@ -1,5 +1,8 @@
 import React from 'react'
 
+import { connect } from 'react-redux';
+import appAction from '../../redux/actions/action';
+
 import Menu from 'antd/lib/menu'
 import Icon from 'antd/lib/icon'
 const SubMenu = Menu.SubMenu
@@ -8,7 +11,22 @@ import { withRouter , Link } from 'react-router-dom'
 import Header from '../common/Header.js'
 import Body from '../common/Body.js'
 
-
+// 最终要交给redux管理的所有变量
+const mapStoreStateToProps = (state) => ({
+    dispatch: state.dispatch,
+    testvalue: state.main.inputvalue,
+  });
+  
+  
+  // 最终要交给redux管理的所有action
+  // 即定义哪些方法将成为action
+  const mapDispatches = (dispatch) => ({
+    fn: {
+      addnumone: (v) => {
+        dispatch(appAction.addNumOne(v));
+      },
+    },
+  });
 
 class IndexCom extends React.Component {
     constructor (props){
@@ -81,4 +99,4 @@ class IndexCom extends React.Component {
     }
 }
 
-export default IndexCom
+export default connect(mapStoreStateToProps, mapDispatches)(IndexCom)
