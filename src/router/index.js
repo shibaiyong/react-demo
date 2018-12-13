@@ -51,14 +51,18 @@
   )
 
   // 相当于 下面这种写法
-  // <App>
-  //   <Route exact path="/" component={IndexCom}></Route>
-  //       <Route path='/detail' component={Detail}></Route>
-  //       <Route exact path='/tabs/:id' component={Tabs}></Route>
-  //       <Route exact path='/list' component={List}></Route>
-  //       <Route path='/broadcast' component={Broadcast}></Route>
-  //       <Route path='/mine' component={Mine}/>
-  // </App>
+  //<App>
+  //  <Route exact path="/" component={IndexCom}></Route>
+  //  <Route path='/detail' component={Detail}></Route>
+  //  <Route exact path='/tabs/:id' component={Tabs}></Route>
+  //  <Route exact path='/list' component={List}></Route>
+  //  <Route path='/broadcast' component={Broadcast}></Route>
+  //  <Route path='/mine' component={Mine}/>
+  //  <Mine>
+  //    <Route exact path='/mine/login' component={Login}></Route>
+  //    <Route path='/mine/register' component={Register}></Route>
+  //  </Mine>
+  //</App>
 
   export default Root
 
