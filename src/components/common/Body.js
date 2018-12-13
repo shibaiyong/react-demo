@@ -64,8 +64,8 @@ class Body extends React.Component {
                 <li key={index}>
                 <input type="checkbox"/>
                   <p>{item}</p>
-                  <a onClick={this.linkTo.bind(this,index,item)}>删</a>
-                  <a onClick={this.deleteThing.bind(this,index)}>详</a>
+                  <a onClick={this.linkTo.bind(this,index,item)}>详</a>
+                  <a onClick={this.deleteThing.bind(this,index)}>删</a>
                   
                 </li>
               )
