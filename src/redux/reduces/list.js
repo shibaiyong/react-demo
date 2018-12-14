@@ -19,6 +19,7 @@ const changeStr = ( state = initeState, action ) => {
   console.log(action.type);
   switch(action.type){
     case 'changstring': return change(state,action);
+    default: return null;
   }
 }
 

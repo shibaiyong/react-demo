@@ -1,5 +1,8 @@
   import React from 'react'
   import {Route, Redirect,BrowserRouter,Switch,withRouter} from 'react-router-dom'
+  import Provider from 'react-redux'; // react和redux连接的桥梁，就是这个Provider
+  import Store from '../redux/index.js';
+
   import IndexCom from '../components/index/Index.js'
   import Detail from '../components/details/Detail.js'
   import Mine from '../components/mine/Mine.js'
@@ -36,17 +39,19 @@
   );
   const Root = () => (
     <BrowserRouter>
-      <Router component={App}>
-        <Route exact path="/" component={IndexCom}></Route>
-        <Route path='/detail' component={Detail}></Route>
-        <Route exact path='/tabs' component={Tabs}></Route>
-        <Route exact path='/list' component={List}></Route>
-        <Route path='/broadcast' component={Broadcast}></Route>
-        <Router component={Mine}>
-          <Route exact path='/mine/login' component={Login}></Route>
-          <Route path='/mine/register' component={Register}></Route> 
+      <Provider store={Store}>
+        <Router component={App}>
+          <Route exact path="/" component={IndexCom}></Route>
+          <Route path='/detail' component={Detail}></Route>
+          <Route exact path='/tabs' component={Tabs}></Route>
+          <Route exact path='/list' component={List}></Route>
+          <Route path='/broadcast' component={Broadcast}></Route>
+          <Router component={Mine}>
+            <Route exact path='/mine/login' component={Login}></Route>
+            <Route path='/mine/register' component={Register}></Route> 
+          </Router>
         </Router>
-      </Router>
+      </Provider>
     </BrowserRouter>
   )
 
@@ -64,6 +69,6 @@
   //  </Mine>
   //</App>
 
-  export default Root
+  export default Root         
 
   

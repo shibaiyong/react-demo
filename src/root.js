@@ -8,6 +8,8 @@ import 'antd/lib/icon/style/css'
 import ReactDom from 'react-dom'
 import React from 'react'
 
-import Root from './router'
+// import Root from './components/app/APP'
 
-ReactDom.render(<Root />,document.getElementById('root'))
+import {Root} from './router/index.js'
+
+ReactDom.render(<Root/>,document.getElementById('root'))

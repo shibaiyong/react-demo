@@ -20,6 +20,7 @@ const addNum = ( state = initeState, action ) => {
   console.log(action.type);
   switch(action.type){
     case 'add': return add(state,action);
+    default : return null;
   }
 }
 
