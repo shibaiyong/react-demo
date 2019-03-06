@@ -10,6 +10,6 @@ import React from 'react'
 
 // import Root from './components/app/APP'
 
-import {Root} from './router/index.js'
+import Root from './router'
 
 ReactDom.render(<Root/>,document.getElementById('root'))

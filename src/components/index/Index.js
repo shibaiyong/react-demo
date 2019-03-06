@@ -11,23 +11,6 @@ import { withRouter , Link } from 'react-router-dom'
 import Header from '../common/Header.js'
 import Body from '../common/Body.js'
 
-// 最终要交给redux管理的所有变量
-const mapStoreStateToProps = (state) => ({
-    dispatch: state.dispatch,
-    testvalue: state.main.inputvalue,
-  });
-  
-  
-  // 最终要交给redux管理的所有action
-  // 即定义哪些方法将成为action
-  const mapDispatches = (dispatch) => ({
-    fn: {
-      addnumone: (v) => {
-        dispatch(appAction.addNumOne(v));
-      },
-    },
-  });
-
 class IndexCom extends React.Component {
     constructor (props){
         super (props)
@@ -51,7 +34,12 @@ class IndexCom extends React.Component {
         if(e.key == '/list'){
             this.linkTo(e.key);
         }
-      }
+    }
+    componentDidMount(){
+        console.log(this.props.match);
+        console.log(this.props.history);
+        console.log(this.props.location);
+    }
     render (){
         
         let backAndTextColor = {
@@ -72,11 +60,11 @@ class IndexCom extends React.Component {
                         mode="inline">
                         <SubMenu key="sub1" title={<span><Icon type="mail" /><span>导航一</span></span>}>
                             <MenuItemGroup key="g1" title="第一组">
-                                <Menu.Item key="/tabs"><Link to="/tabs/123">Tab切换</Link></Menu.Item>
+                                <Menu.Item key="/tabs">Tab切换</Menu.Item>
                                 <Menu.Item key="/list">列表页</Menu.Item>
                             </MenuItemGroup>
                             <MenuItemGroup key="g2" title="第二组">
-                                <Menu.Item key="/broadcast"><Link to="/broadcast">轮播图</Link></Menu.Item>
+                                <Menu.Item key="/broadcast">轮播图</Menu.Item>
                                 <Menu.Item key="4">Option 4</Menu.Item>
                             </MenuItemGroup>
                         </SubMenu>

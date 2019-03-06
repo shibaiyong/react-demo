@@ -10,13 +10,14 @@ class Detail extends React.Component {
     }
   }
   componentDidMount(){
-      
+      console.log(this.props.location)
+      console.log(this.props)
   }
   render (){
     return (
       <div className='detail'>
       <Header/>
-        Detail 的 url 参数是： {this.props.location.query.id}--{this.props.location.query.name}
+        Detail 的 url 参数是： { this.props.location.state.id}--{this.props.location.state.name}
         <Footer/>
       </div>
       

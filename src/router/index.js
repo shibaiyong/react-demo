@@ -39,31 +39,17 @@
   );
   const Root = () => (
     <BrowserRouter>
-<<<<<<< HEAD
-      <Provider>
-        <Router component={App}>
-          <Route exact path="/" component={IndexCom}></Route>
-          <Route path='/detail' component={Detail}></Route>
-          <Route exact path='/tabs' component={Tabs}></Route>
-          <Route exact path='/list' component={List}></Route>
-          <Route path='/broadcast' component={Broadcast}></Route>
-          <Router component={Mine}>
-            <Route exact path='/mine/login' component={Login}></Route>
-            <Route path='/mine/register' component={Register}></Route> 
-          </Router>
-=======
       <Router component={App}>
         <Route exact path="/" component={IndexCom}></Route>
         <Route path='/detail' component={Detail}></Route>
-        <Route exact path='/tabs/:id' component={Tabs}></Route>
+        <Route exact path='/tabs' component={Tabs}></Route>
         <Route exact path='/list' component={List}></Route>
         <Route path='/broadcast' component={Broadcast}></Route>
         <Router component={Mine}>
           <Route exact path='/mine/login' component={Login}></Route>
           <Route path='/mine/register' component={Register}></Route> 
->>>>>>> parent of 112c2bd... shibaiyong add some router props and methods
         </Router>
-      </Provider>
+      </Router>
     </BrowserRouter>
   )
 

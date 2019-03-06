@@ -20,7 +20,7 @@ class Mine extends React.Component{
   }
   
   componentDidMount(){
-    
+    console.log(this.props)
   }
 
   render(){
@@ -28,8 +28,6 @@ class Mine extends React.Component{
     return (
       <div className='mine'>
         <Header isShowLogin={ this.isShowLogin } />
-        {/* <Route path='/mine/login' component={Login}></Route>
-        <Route path='/mine/register' component={Register}></Route> */}
         {this.props.children}
       </div>
     )
