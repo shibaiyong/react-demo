@@ -88,4 +88,4 @@ class Body extends React.Component {
   }
 }
 
-export default withRouter(Body)
+export default Body

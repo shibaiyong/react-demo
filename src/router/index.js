@@ -1,7 +1,7 @@
   import React from 'react'
   import {Route, Redirect,BrowserRouter,Switch,withRouter} from 'react-router-dom'
   import Provider from 'react-redux'; // react和redux连接的桥梁，就是这个Provider
-  import Store from '../redux/index.js';
+  // import Store from '../redux/index.js';
 
   import IndexCom from '../components/index/Index.js'
   import Detail from '../components/details/Detail.js'
@@ -39,7 +39,7 @@
   );
   const Root = () => (
     <BrowserRouter>
-      <Provider store={Store}>
+      <Provider>
         <Router component={App}>
           <Route exact path="/" component={IndexCom}></Route>
           <Route path='/detail' component={Detail}></Route>

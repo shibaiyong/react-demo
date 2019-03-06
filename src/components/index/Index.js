@@ -98,6 +98,5 @@ class IndexCom extends React.Component {
         )
     }
 }
-
-export default connect(mapStoreStateToProps, mapDispatches)(IndexCom)
-//export default IndexCom
+//export default connect(mapStoreStateToProps, mapDispatches)(IndexCom)
+export default IndexCom
