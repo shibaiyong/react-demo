@@ -1,32 +1,22 @@
 import React from 'react';
 import store from '../../redux/store'
-import action from '../../redux/actions'
+import { connect } from 'react-redux'
 class Login extends React.Component{
   constructor(props){
     super(props)
     this.headerstyle = {
     }
     this.state = {
-      num:store.getState().num,
-      text:store.getState().text
     }
-    this.changeText=this.changeText.bind(this)
-    this.changeNum=this.changeNum.bind(this)
-  }
-  changeNum(){
-    action.changeNum();
-  }
-  changeText(e){
-    var val=e.target.value;
-    action.changeText(val);
+    
+    this.unsubscribe=null
   }
   componentDidMount(){
-    store.subscribe(()=>{
-      this.setState({
-        num:store.getState().num,
-        text:store.getState().text
-      })
-    })
+  
+  }
+  componentWillUnmount(){
+    //组件销毁之前取消监听，因为被销毁的组件无法响应store里面的数据变化。
+    this.unsubscribe()
   }
   render(){
     return (
@@ -37,13 +27,33 @@ class Login extends React.Component{
           <li><input type="submit" className='shi-input' value='登录' /></li>
         </ul>
         <div style={{width:'300px',height:'100px',border:'1px solid blue'}}>
-          <input type='text' onBlur={this.changeText}/>
-          {this.state.text}<br/>
-          {this.state.num}
+          <input type='text' onBlur={this.props.changeText}/>
+          {this.props.text}<br/>
+          {this.props.num}
         </div>
       </div>
     )
   }
 }
+//需要渲染什么数据
+function mapStateToProps(state) {
+  return {
+    num: state.num,
+    text:state.text
+  }
+}
+//需要触发什么行为
+function mapDispatchToProps(dispatch) {
+  return {
+    changeNum: () => dispatch({ type:'changenum',num:num}),
+    changeText: (e) =>{
+      var val=e.target.value
+      dispatch({ type:'changetext',text:val })
+    }
+  }
+}
 
-export default Login
+
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login)

@@ -13,6 +13,7 @@ class Register extends React.Component{
     }
     this.changeText=this.changeText.bind(this)
     this.changeNum=this.changeNum.bind(this)
+    this.unsubscribe=null
   }
   addDoThing(){
       
@@ -26,12 +27,21 @@ class Register extends React.Component{
     action.changeText(val);
   }
   componentDidMount(){
-    store.subscribe(()=>{
+    this.unsubscribe = store.subscribe(()=>{
       this.setState({
         num:store.getState().num,
         text:store.getState().text
       })
+      //同步方式修改状态
+      
+      // this.setState(function (prevState, props) {
+      //   return { num:store.getState().num}
+      // })
     })
+  }
+  componentWillUnmount(){
+    //组件销毁之前取消监听，因为被销毁的组件无法响应store里面的数据变化。
+    this.unsubscribe()
   }
   render(){
     return (
