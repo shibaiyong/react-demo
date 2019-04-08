@@ -63,7 +63,7 @@ class IndexCom extends React.Component {
                             </MenuItemGroup>
                             <MenuItemGroup key="g2" title="第二组">
                                 <Menu.Item key="/broadcast">轮播图</Menu.Item>
-                                <Menu.Item key="4">Option 4</Menu.Item>
+                                <Menu.Item key="/paginationcom">分页组件</Menu.Item>
                             </MenuItemGroup>
                         </SubMenu>
                         <SubMenu key="sub2" title={<span><Icon type="appstore" /><span>Navigation Two</span></span>}>

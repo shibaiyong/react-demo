@@ -13,6 +13,7 @@
   import Tabs from '../components/tabs/TabUI'
   import Broadcast from '../components/common/Broadcast'
   import App from '../components/app/APP'
+  import paginationCom from '../components/paginationCom/paginationCom'
   // react-router 4.0之前的路由写法
   // const Root = () => (
   //   <Router history={browserHistory}>
@@ -47,6 +48,7 @@
         <Route exact path='/tabs' component={Tabs}></Route>
         <Route exact path='/list' component={List}></Route>
         <Route path='/broadcast' component={Broadcast}></Route>
+        <Route path='/paginationcom' component={paginationCom}></Route>
         <Router component={Mine}>
           <Route exact path='/mine/login' component={Login}></Route>
           <Route path='/mine/register' component={Register}></Route> 

@@ -9,13 +9,13 @@ class List extends React.Component{
   constructor(props){
     super(props)
     this.listData=[
-        {id:1,name:'hahah111'},
-        {id:2,name:'hahah222'},
-        {id:3,name:'hahah333'},
-        {id:4,name:'hahah444'},
-        {id:5,name:'hahah555'},
-        {id:6,name:'hahah666'},
-        {id:7,name:'hahah777'}
+      {id:1,name:'hahah111'},
+      {id:2,name:'hahah222'},
+      {id:3,name:'hahah333'},
+      {id:4,name:'hahah444'},
+      {id:5,name:'hahah555'},
+      {id:6,name:'hahah666'},
+      {id:7,name:'hahah777'}
     ]
   }
 

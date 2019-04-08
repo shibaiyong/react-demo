@@ -17,6 +17,7 @@ ul{
   border-radius: 4px;
   outline: none;
   border: 1px solid #ddd;
+  padding-left:8px;
 }
 .noIndex{
     display: none;
