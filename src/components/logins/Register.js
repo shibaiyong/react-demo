@@ -41,7 +41,7 @@ class Register extends React.Component{
   }
   componentWillUnmount(){
     //组件销毁之前取消监听，因为被销毁的组件无法响应store里面的数据变化。
-    this.unsubscribe()
+    //this.unsubscribe()
   }
   render(){
     return (

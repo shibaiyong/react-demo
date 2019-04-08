@@ -31,9 +31,7 @@ class IndexCom extends React.Component {
         this.props.history.push(route)
     }
     handleClick(e){
-        if(e.key == '/list'){
-            this.linkTo(e.key);
-        }
+        this.linkTo(e.key);
     }
     componentDidMount(){
         console.log(this.props.match);
