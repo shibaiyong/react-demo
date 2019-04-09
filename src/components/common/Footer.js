@@ -1,18 +1,18 @@
 import React from 'react'
-import {Link} from 'react-router';
+import { Link } from 'react-router';
 
 class Footer extends React.Component {
-    constructor (props){
-        super (props)
-        this.state={
-            footerContent:'This is Footer'
+    constructor(props) {
+        super(props)
+        this.state = {
+            footerContent: 'This is Footer'
         }
     }
 
-    render (){
+    render() {
         return (
             <div className='footer'>
-              {/* <Link to='/mine'>Mine</Link> */}
+                {/* <Link to='/mine'>Mine</Link> */}
             </div>
         )
     }

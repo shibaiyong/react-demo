@@ -2,32 +2,32 @@ import React from 'react';
 import Header from '../common/Header'
 // import Login from '../logins/Login'
 // import Register from '../logins/Register'
-import {Router, Route} from 'react-router-dom'
-class Mine extends React.Component{
-  constructor(props){
+import { Router, Route } from 'react-router-dom'
+class Mine extends React.Component {
+  constructor(props) {
     super(props)
     this.headerstyle = {
-      
+
     }
     this.isShowLogin = true
     this.state = {
-      
+
     }
-    
+
   }
-  addDoThing(){
-    
+  addDoThing() {
+
   }
-  
-  componentDidMount(){
+
+  componentDidMount() {
     console.log(this.props)
   }
 
-  render(){
+  render() {
 
     return (
       <div className='mine'>
-        <Header isShowLogin={ this.isShowLogin } />
+        <Header isShowLogin={this.isShowLogin} />
         {this.props.children}
       </div>
     )
