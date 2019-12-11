@@ -15,7 +15,7 @@ class IndexCom extends React.Component {
             middleData: [],
 
         },
-            this.transmitData = this.transmitData.bind(this)
+        this.transmitData = this.transmitData.bind(this)
         this.handleClick = this.handleClick.bind(this)
     }
     transmitData(data) {
@@ -31,9 +31,9 @@ class IndexCom extends React.Component {
         this.linkTo(e.key);
     }
     componentDidMount() {
-        console.log(this.props.match);
-        console.log(this.props.history);
-        console.log(this.props.location);
+        // console.log(this.props.match);
+        // console.log(this.props.history);
+        // console.log(this.props.location);
     }
     render() {
 

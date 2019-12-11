@@ -1,36 +1,40 @@
 
 import axios from 'axios'
 
+import { BrowserRouter } from 'react-router-dom'
+
+import createBrowserHistory from 'history/createBrowserHistory'
+
+// const { history, location } = new BrowserRouter()
+
 let instance = axios.create({
-    baseURL: 'http://t.weather.sojson.com'
+  baseURL: 'http://t.weather.sojson.com'
 })
 
 //请求的全局拦截器
-instance.interceptors.request.use(config => {
-    let token = 'asdfghjklqwertyuiopzxcvbnm123456789'
-    if (token) {
-        config.headers.Authorization = token
-    } else {
-        window.location.href = 'http://www.baidu.com'
-    }
-    console.log(config)
+instance.interceptors.request.use(
+  config => {
+    
+    config.headers.Authorization = sessionStorage.getItem('RyxToken')
     return config
-}, err => {
+  },
+  err => {
     return Promise.reject(err)
-})
+  }
+)
 
-instance.interceptors.response.use(response => {
-    console.log(response)
-    return response
-}, err => {
-    if (err.response) {
-        console.log(err)
-        // switch(err.response.status){
-        //     case 401:router.replace({
-        //         path:'/login'
-        //     })
-        // }
+instance.interceptors.response.use(
+    response => {
+        if (response.data.code == 2002) {
+            return router.replace('/login')
+        }
+        return response
+    },
+    error => {
+        //history.push('/mine/login')
+        location.href = 'http://localhost:8080/mine/login?id=1'
+        return Promise.reject(error)
     }
-})
+)
 
 export default instance

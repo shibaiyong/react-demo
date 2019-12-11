@@ -1,5 +1,4 @@
 import React from 'react';
-import store from '../../redux/store'
 import { connect } from 'react-redux'
 class Login extends React.Component {
   constructor(props) {
@@ -12,7 +11,7 @@ class Login extends React.Component {
     this.unsubscribe = null
   }
   componentDidMount() {
-
+    //console.log(this.props)
   }
   componentWillUnmount() {
     //组件销毁之前取消监听，因为被销毁的组件无法响应store里面的数据变化。
@@ -52,8 +51,5 @@ function mapDispatchToProps(dispatch) {
     }
   }
 }
-
-
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login)

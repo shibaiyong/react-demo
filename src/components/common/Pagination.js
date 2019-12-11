@@ -1,4 +1,5 @@
 import React from 'react'
+
 class PageCom extends React.Component {
     constructor(props) {
         super(props)
@@ -10,17 +11,18 @@ class PageCom extends React.Component {
     }
     componentWillReceiveProps(nextprops) {
         //在这里根据父组件传过来的props更新状态，不会触发额外得render。但是在第一次渲染的时候不执行。这也是他跟willmount的区别。
-        console.log(nextprops);
+        
     }
     componentWillMount() {
-        console.log('componentWillMounted');
+        
         //在这里根据父组件传过来的props更新状态，不会触发额外得render.在componentWillReceiveProps中同样是安全的
         this.calculatePageNum();
         this.calculateCurrentPage();
     }
     componentDidMount() {
-        console.log('componentDidMounted');
+        
         //this.calculateCurrentPage();
+
     }
     //点击翻页按钮执行的逻辑
     turnPage(type, e) {
@@ -77,7 +79,7 @@ class PageCom extends React.Component {
     }
     //渲染要展示出来的按钮
     renderPageButton(idx) {
-        console.log('渲染函数')
+        
         let currentPage = idx || this.state.currentPage
         let allPage = this.state.pageNum.length
         let basePage = Math.floor(this.state.showButtonNum / 2)
@@ -98,7 +100,7 @@ class PageCom extends React.Component {
         })
     }
     render() {
-        console.log('render');
+    
         return (
             <div className="page-container">
                 <div className="data-info">

@@ -7,7 +7,7 @@ export const getWeather = () => {
     let params = {
         id: 1
     }
-    return instance.request({ url, method })
+    return instance.request({ url, method, params })
         .then(res => {
             return Promise.resolve(res)
         })

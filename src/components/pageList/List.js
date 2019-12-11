@@ -1,9 +1,9 @@
 import React from 'react'
 
-import { withRouter } from 'react-router-dom'
-
 import Header from '../common/Header.js'
 import Footer from '../common/Footer.js'
+import { BrowserRouter } from 'react-router-dom'
+const { history:myhistory, location } = new BrowserRouter()
 
 class List extends React.Component {
   constructor(props) {
@@ -28,10 +28,14 @@ class List extends React.Component {
   }
 
   componentDidMount() {
-
+    console.log(myhistory)
+    console.log(this.props.history)
+    myhistory.push('/')
   }
   linkTo(id, name) {
-    browserHistory.push({ pathname: '/detail', query: { id: id, name: name } })
+		//this.props.history.push('/detail',{ id: id,name: name }) //两种方式跳转都行
+    this.props.history.push({pathname: '/detail', state: { id: id, name: name }})
+    
   }
   render() {
     return (

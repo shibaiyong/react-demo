@@ -1,6 +1,7 @@
 import React from 'react'
 import PageCom from '../common/Pagination'
 import { getWeather } from '../api/require'
+
 class PaginationCom extends React.Component {
     constructor(props) {
         super(props)
@@ -12,13 +13,13 @@ class PaginationCom extends React.Component {
     }
     getWeather15() {
         getWeather().then(res => {
-            console.log(res)
+            
         }).catch(err => {
-            console.log(err)
+            
         })
     }
     componentDidMount() {
-        console.log('获取天气接口调用')
+        //this.props.history.push('/list')
         this.getWeather15()
     }
     render() {

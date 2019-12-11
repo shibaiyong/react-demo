@@ -1,11 +1,17 @@
 import React from 'react'
-
+import { withRouter } from 'react-router-dom'
 class App extends React.Component {
   constructor(props) {
     super(props)
   }
   componentDidMount() {
-    //console.log(this.props.match);
+    // console.log(this.props.match);
+    // console.log(this.props.history);
+    // console.log(this.props.location);
+
+    // this.props.history.listen(() => {
+    //   console.log('hahahahahha')
+    // })
   }
   render() {
     return (
@@ -15,4 +21,4 @@ class App extends React.Component {
     )
   }
 }
-export default App
+export default withRouter(App)

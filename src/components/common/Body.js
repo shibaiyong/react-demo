@@ -1,6 +1,6 @@
 import React from 'react'
-// import { browserHistory } from 'react-router'
-import { withRouter, Link } from 'react-router-dom'
+import { browserHistory } from 'react-router'
+import { withRouter } from 'react-router-dom'
 
 class Body extends React.Component {
   constructor(props) {
@@ -21,8 +21,8 @@ class Body extends React.Component {
     })
   }
   linkTo(id, name) {
-    // browserHistory.push({pathname:'/detail',query:{id:id,name:name}})
-    this.props.history.push({ pathname: '/detail', state: { id: id, name: name } })
+    browserHistory.push({pathname:'/detail',query:{id:id,name:name}})
+    //this.props.history.push({ pathname: '/detail', state: { id: id, name: name } })
   }
   deleteThing(index) {
     var len = this.state.willToDoThings.length;
