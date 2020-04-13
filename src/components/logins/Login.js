@@ -15,6 +15,7 @@ class Login extends React.Component {
   }
 
   submitForm(event) {
+    //非受控组件表单提交
     let username = this.username.value
     let password = this.password.value
     let remember = this.remember.checked

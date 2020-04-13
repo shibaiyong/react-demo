@@ -10,14 +10,15 @@ class Register extends React.Component {
     this.state = {
       num: store.getState().num,
       text: store.getState().text,
-      username:'',
-      password:'',
-      remember:false
+      registerForm:{
+        username:'',
+        password:'',
+        remember:false
+      }
     }
     this.changeText = this.changeText.bind(this)
     this.changeNum = this.changeNum.bind(this)
-    this.submitForm = this.submitForm(this)
-    this.handleActionChange = this.handleActionChange(this)
+    // this.handleActionChange = this.handleActionChange(this)
     this.unsubscribe = null
   }
   addDoThing() {
@@ -33,17 +34,35 @@ class Register extends React.Component {
   }
 
   handleActionChange(event){
-    console.log(event)
     
     let e = event.nativeEvent
-    
+
+    //let tempState = {...this.state.registerForm,[atttibute]:e.target.value}
+
+    let attribute = e.target.name
+
+    let elementType = e.target.type
+
+    let tempState
+
+    if(elementType == 'checkbox' || elementType == 'radio'){
+
+      tempState = Object.assign({},this.state.registerForm,{[attribute]:e.target.checked})
+
+    }else{
+
+      tempState = Object.assign({},this.state.registerForm,{[attribute]:e.target.value})
+
+    }
+
     this.setState({
-      [atttibute]:val
+      registerForm:tempState
     })
   }
 
   submitForm() {
-    console.log(this.state)
+    //受控组件表单提交
+    console.log(this.state.registerForm)
   }
 
   componentDidMount() {
@@ -67,10 +86,10 @@ class Register extends React.Component {
     return (
       <div className='login'>
         <ul>
-          <li><label>User Name&nbsp;:&nbsp;&nbsp;</label><input type="text" onChange={this.handleActionChange} name='user' className='shi-input' /></li>
-          <li><label>Password&nbsp;:&nbsp;&nbsp;</label><input type="text" onChange={this.handleActionChange} name='password' className='shi-input' /></li>
-          <li><input type="submit" className='shi-input' value='注册' /></li>
-          <li><input type="checkbox" name="remember" onChange={this.handleActionChange}/>记住密码</li>
+          <li><label>User Name&nbsp;:&nbsp;&nbsp;</label><input type="text" onChange={this.handleActionChange.bind(this)} name='username' className='shi-input' /></li>
+          <li><label>Password&nbsp;:&nbsp;&nbsp;</label><input type="text" onChange={this.handleActionChange.bind(this)} name='password' className='shi-input' /></li>
+          <li><input type="submit" onClick={this.submitForm.bind(this)} className='shi-input' value='注册' /></li>
+          <li><input type="checkbox" name="remember" onChange={this.handleActionChange.bind(this)}/>记住密码</li>
         </ul>
         <div style={{ width: '300px', height: '100px', border: '1px solid red' }}>
           <button onClick={this.changeNum}>num++</button>
