@@ -32,7 +32,7 @@ instance.interceptors.response.use(
     },
     error => {
         //history.push('/mine/login')
-        location.href = 'http://localhost:8080/mine/login?id=1'
+        //location.href = 'http://localhost:8080/mine/login?id=1'
         return Promise.reject(error)
     }
 )

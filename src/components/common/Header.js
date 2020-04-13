@@ -10,9 +10,12 @@ class Header extends React.Component {
             headerContent: 'ToDoList',
             willDoThing: [],
         }
-        this.addDoThing = this.addDoThing.bind(this)
+        //this.addDoThing = this.addDoThing.bind(this)
     }
-    addDoThing(e) {
+    addDoThing(SyntheticEvent) {
+        //需要传入额外参数时，事件对象放在最后传入，并且不能省略。
+        //console.log(SyntheticEvent.nativeEvent)
+        let e = SyntheticEvent.nativeEvent
         if (e.keyCode == 13) {
             this.state.willDoThing.push(e.target.value)
             //异步
@@ -26,7 +29,6 @@ class Header extends React.Component {
             this.props.outputData(this.state.willDoThing);
             e.target.value = '';
         }
-
     }
     linkTo(path) {
         this.props.history.push(path)
@@ -37,9 +39,9 @@ class Header extends React.Component {
     render() {
         // let loginInfo = this.props.isShowLogin ? (<div className="login-info"><span onClick={ this.linkTo.bind(this,'/mine/login')}>Login</span>&nbsp;&nbsp;
         // <span onClick={ this.linkTo.bind(this,'/mine/register') }>Register</span>&nbsp;&nbsp;</div>) : '';
-        // let goLogin = this.props.isShowLogin ? '' : <Link to='/mine'>去登录</Link>;
+        //let goLogin = this.props.isShowLogin ? '' : <Link to='/mine'>去登录</Link>;
         let loginInfo = this.props.isShowLogin ? (<div className="login-info"><Link to="/mine/login"><span>Login</span></Link>&nbsp;&nbsp;
-    <Link to="/mine/register"><span>Register</span></Link>&nbsp;&nbsp;</div>) : '';
+        <Link to="/mine/register"><span>Register</span></Link>&nbsp;&nbsp;</div>) : '';
         let goLogin = this.props.isShowLogin ? '' : <Link to='/mine/login'>去登录</Link>;
 
         return (
@@ -47,9 +49,14 @@ class Header extends React.Component {
                 {goLogin}
                 <header>
                     <Link to="/">{this.state.headerContent}</Link>
-                    <input onKeyUp={this.addDoThing} style={this.headerstyle} placeholder='To Do List' type='text' />
+                    <input onKeyUp={this.addDoThing.bind(this)} style={this.headerstyle} placeholder='To Do List' type='text' />
                 </header>
-                {loginInfo}
+                {
+                    this.props.isShowLogin && (<div className="login-info">
+                                                    <Link to="/mine/login"><span>Login</span></Link>&nbsp;&nbsp;
+                                                    <Link to="/mine/register"><span>Register</span></Link>&nbsp;&nbsp;
+                                                </div>)
+                }
             </div>
         )
     }

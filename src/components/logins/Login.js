@@ -6,10 +6,22 @@ class Login extends React.Component {
     this.headerstyle = {
     }
     this.state = {
+
     }
 
     this.unsubscribe = null
+
+    this.submitForm = this.submitForm.bind(this)
   }
+
+  submitForm(event) {
+    let username = this.username.value
+    let password = this.password.value
+    let remember = this.remember.checked
+    this.loginForm = { username, password, remember }
+    console.log(this.loginForm)
+  }
+
   componentDidMount() {
     //console.log(this.props)
   }
@@ -21,9 +33,10 @@ class Login extends React.Component {
     return (
       <div className='login'>
         <ul>
-          <li><label>UserName&nbsp;:&nbsp;&nbsp;</label><input type="text" name='user' className='shi-input' /></li>
-          <li><label>Password&nbsp;:&nbsp;&nbsp;</label><input type="text" name='password' className='shi-input' /></li>
-          <li><input type="submit" className='shi-input' value='登录' /></li>
+          <li><label>UserName&nbsp;:&nbsp;&nbsp;</label><input ref={input => this.username = input} type="text" className='shi-input' /></li>
+          <li><label>Password&nbsp;:&nbsp;&nbsp;</label><input ref={input => this.password = input} type="text" className='shi-input' /></li>
+          <li><input type="submit" className='shi-input' value='登录' onClick={this.submitForm}/></li>
+          <li><input type="checkbox" ref={input => this.remember = input}/>记住密码</li>
         </ul>
         <div style={{ width: '300px', height: '100px', border: '1px solid blue' }}>
           <input type='text' onBlur={this.props.changeText} />
