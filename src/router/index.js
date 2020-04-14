@@ -12,7 +12,7 @@ const supportsHistory = 'pushState' in window.history
 
 import IndexCom from '../components/index/Index.js'
 import Detail from '../components/details/Detail.js'
-import Mine from '../components/mine/Mine.js'
+import {Mine} from '../components/mine/Mine.js'
 import List from '../components/pageList/List.js'
 import Login from '../components/logins/Login'
 import Register from '../components/logins/Register'

@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
+import { MyContext } from '../mine/Mine'
 class Login extends React.Component {
   constructor(props) {
     super(props)
@@ -24,7 +25,6 @@ class Login extends React.Component {
   }
 
   componentDidMount() {
-    //console.log(this.props)
   }
   componentWillUnmount() {
     //组件销毁之前取消监听，因为被销毁的组件无法响应store里面的数据变化。
@@ -44,6 +44,11 @@ class Login extends React.Component {
           {this.props.text}<br />
           {this.props.num}
         </div>
+        <MyContext.Consumer>
+                {
+                    value => <span>{value}</span>
+                }
+            </MyContext.Consumer>
       </div>
     )
   }

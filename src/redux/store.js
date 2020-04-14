@@ -8,7 +8,7 @@ var copystate={
 
 //面向对象的编程方法，createStore相当于构造函数。而且reducer是纯函数。
 var reducer = (state={  //注意传参数的方式
-  num:0, text:'hello word'},action)=>{
+  num:0, text:'hello word11'},action)=>{
   switch(action.type) {
     case 'changenum':
       copystate.num++;  //不建议直接修改state,可以采用 ... 或者 Object.assign()
