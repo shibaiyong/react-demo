@@ -6,6 +6,10 @@ import Store from '../redux/store.js';
 
 const supportsHistory = 'pushState' in window.history
 
+// const IndexCom = React.lazy(() => import('../components/index/Index.js'))
+// const Register = React.lazy(() => import('../components/logins/Register'))
+// const Login = React.lazy(() => import('../components/logins/Login'))
+
 import IndexCom from '../components/index/Index.js'
 import Detail from '../components/details/Detail.js'
 import Mine from '../components/mine/Mine.js'
@@ -16,6 +20,8 @@ import Tabs from '../components/tabs/TabUI'
 import Broadcast from '../components/common/Broadcast'
 import App from '../components/app/APP'
 import paginationCom from '../components/paginationCom/paginationCom'
+
+
 // react-router 4.0之前的路由写法
 // const Root = () => (
 //   <Router history={browserHistory}>
@@ -36,6 +42,7 @@ const Root = () => (
   <BrowserRouter history={browserHistory} forceRefresh={!supportsHistory}>
     <Provider store={Store}>
       <App>
+        
         <Switch>
           <Route exact path="/" component={IndexCom}></Route>
           <Route path='/detail' component={Detail}></Route>
@@ -48,6 +55,7 @@ const Root = () => (
             <Route path='/mine/register' component={Register}></Route>
           </Mine>
         </Switch>
+        
       </App>
     </Provider>
   </BrowserRouter>

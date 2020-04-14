@@ -11,9 +11,9 @@ class Register extends React.Component {
       num: store.getState().num,
       text: store.getState().text,
       registerForm:{
-        username:'',
-        password:'',
-        remember:false
+        username:'shi',
+        password:'123',
+        remember:true
       }
     }
     this.changeText = this.changeText.bind(this)
@@ -83,13 +83,14 @@ class Register extends React.Component {
     this.unsubscribe()
   }
   render() {
+    const registerForm = this.state.registerForm
     return (
       <div className='login'>
         <ul>
-          <li><label>User Name&nbsp;:&nbsp;&nbsp;</label><input type="text" onChange={this.handleActionChange.bind(this)} name='username' className='shi-input' /></li>
-          <li><label>Password&nbsp;:&nbsp;&nbsp;</label><input type="text" onChange={this.handleActionChange.bind(this)} name='password' className='shi-input' /></li>
+          <li><label>User Name&nbsp;:&nbsp;&nbsp;</label><input type="text" value={registerForm.username} onChange={this.handleActionChange.bind(this)} name='username' className='shi-input' /></li>
+          <li><label>Password&nbsp;:&nbsp;&nbsp;</label><input type="text" value={registerForm.password} onChange={this.handleActionChange.bind(this)} name='password' className='shi-input' /></li>
           <li><input type="submit" onClick={this.submitForm.bind(this)} className='shi-input' value='注册' /></li>
-          <li><input type="checkbox" name="remember" onChange={this.handleActionChange.bind(this)}/>记住密码</li>
+          <li><input type="checkbox" checked={registerForm.remember} name="remember" onChange={this.handleActionChange.bind(this)}/>记住密码</li>
         </ul>
         <div style={{ width: '300px', height: '100px', border: '1px solid red' }}>
           <button onClick={this.changeNum}>num++</button>
