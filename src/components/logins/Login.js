@@ -13,15 +13,23 @@ class Login extends React.Component {
     this.unsubscribe = null
 
     this.submitForm = this.submitForm.bind(this)
+
+    this.textInput = React.createRef()
+
+    this.focusInput = this.focusInput.bind(this)
   }
 
   submitForm(event) {
     //非受控组件表单提交
-    let username = this.username.value
+    let username = this.username.value //等同于 focusInput 中 this.textInput.current = this.username
     let password = this.password.value
     let remember = this.remember.checked
     this.loginForm = { username, password, remember }
     console.log(this.loginForm)
+  }
+
+  focusInput(){
+    this.textInput.current.focus()
   }
 
   componentDidMount() {
@@ -40,15 +48,15 @@ class Login extends React.Component {
           <li><input type="checkbox" ref={input => this.remember = input}/>记住密码</li>
         </ul>
         <div style={{ width: '300px', height: '100px', border: '1px solid blue' }}>
-          <input type='text' onBlur={this.props.changeText} />
-          {this.props.text}<br />
+
+          <input type='text' onBlur={this.props.changeText} ref={this.textInput}/>
+
+          <span onClick={this.focusInput}>{this.props.text}</span><br />
           {this.props.num}
         </div>
         <MyContext.Consumer>
-                {
-                    value => <span>{value}</span>
-                }
-            </MyContext.Consumer>
+          { value => <span>{value}</span> }
+        </MyContext.Consumer>
       </div>
     )
   }
