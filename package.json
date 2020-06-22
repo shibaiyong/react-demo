@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --env dev",
-    "prd": "webpack-dev-server --env prd"
+    "prd": "webpack"
   },
   "keywords": [],
   "author": "",

@@ -5,7 +5,7 @@ const merge = require('webpack-merge');
 
 const PATH = {
 	src: path.join(__dirname, "src"),
-	build: path.join(__dirname, "build")
+	build: path.resolve(__dirname, "build")
 }
 
 const commonConfig = {
